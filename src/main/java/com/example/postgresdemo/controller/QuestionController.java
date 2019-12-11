@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @RestController
 public class QuestionController {
@@ -16,11 +17,15 @@ public class QuestionController {
     @Autowired
     private QuestionRepository questionRepository;
 
-    @GetMapping("/questions")
-    public Page<Question> getQuestions(Pageable pageable) {
-        return questionRepository.findAll(pageable);
-    }
+//    @GetMapping("/questions")
+//    public Page<Question> getQuestions(Pageable pageable) {
+//        return questionRepository.findAll(pageable);
+//    }
 
+    @GetMapping("/questions")
+    public ArrayList<Question> getQuestions() {
+        return (ArrayList<Question>) questionRepository.findAll();
+    }
 
     @PostMapping("/questions")
     public Question createQuestion(@Valid @RequestBody Question question) {

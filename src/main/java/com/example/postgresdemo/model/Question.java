@@ -23,6 +23,12 @@ public class Question extends AuditModel {
     @Column(columnDefinition = "text")
     private String description;
 
+    @Column(columnDefinition = "text")
+    private String mescouillesaski;
+
+    @Column(columnDefinition = "text")
+    private String mescouillesaskii;
+
     public Long getId() {
         return id;
     }
@@ -39,11 +45,27 @@ public class Question extends AuditModel {
         this.title = title;
     }
 
+    public String getMescouillesaski() {
+        return mescouillesaski;
+    }
+
+    public void setMescouillesaski(String mescouillesaski) {
+        this.mescouillesaski = mescouillesaski;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getMescouillesaskii() {
+        return mescouillesaskii;
+    }
+
+    public void setMescouillesaskii(String mescouillesaskii) {
+        this.mescouillesaskii = mescouillesaskii;
     }
 }
